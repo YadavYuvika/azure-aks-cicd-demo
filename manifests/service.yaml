@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-flask
+  namespace: namespace-workflow-1790192756992
+  labels:
+    app.kubernetes.io/name: demo-flask
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: demo-flask
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
